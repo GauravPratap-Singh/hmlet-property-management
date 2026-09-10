@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'hmlet_backend.apps.contracts',
+    'hmlet_backend.apps.members',
+    'hmlet_backend.apps.properties',
+    'hmlet_backend.apps.units',
+    'hmlet_backend.apps.users'
 ]
 
 MIDDLEWARE = [
@@ -49,7 +54,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'config.urls'
+ROOT_URLCONF = 'hmlet_backend.urls'
 
 TEMPLATES = [
     {
@@ -66,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'config.wsgi.application'
+WSGI_APPLICATION = 'hmlet_backend.wsgi.application'
 
 
 # Database
