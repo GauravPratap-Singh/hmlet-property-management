@@ -28,6 +28,7 @@ class PropertyView(ViewSet):
         api_resp.set_data(CreatePropertyResponseSerializer(instance=impl_resp))
         api_resp.set_message(impl_resp.message)
         api_resp.set_reason_code(impl_resp.reason_code)
+        return api_resp.serialize()
 
     def get_all_properties(request: Request) -> Response:
         api_resp = AResponse(message="Properties fetched successfully")
@@ -35,6 +36,7 @@ class PropertyView(ViewSet):
         api_resp.set_data(ListPropertyResponseSerializer(instance=impl_resp))
         api_resp.set_message(impl_resp.message)
         api_resp.set_reason_code(impl_resp.reason_code)
+        return api_resp.serialize()
 
     def get_property(self, request: Request, property_id: int = None) -> Response:
         api_resp = AResponse(message="Property fetched successfully")
