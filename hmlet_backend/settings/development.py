@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'hmlet_backend.apps.contracts',
     'hmlet_backend.apps.members',
     'hmlet_backend.apps.properties',
