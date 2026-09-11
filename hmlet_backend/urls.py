@@ -31,4 +31,8 @@ urlpatterns = [
         "api/members/",
         include("hmlet_backend.apps.members.api.v1.urls"),
     ),
+    path(
+        "api/units/",
+        include("hmlet_backend.apps.units.api.v1.urls"),
+    ),
 ]
