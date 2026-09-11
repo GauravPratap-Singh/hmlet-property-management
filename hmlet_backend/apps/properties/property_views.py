@@ -18,11 +18,11 @@ from hmlet_backend.apps.properties.models.requests.get_property_request import (
 class PropertyView(ViewSet):
     permission_classes = [IsAuthenticated]
 
-    def create_property(request: Request) -> Response:
+    def create_property(self, request: Request) -> Response:
         api_resp = AResponse(message="Property created successfully")
         serializer_data = CreatePropertyRequestSerializer(data=request.data)
-        serializer_data.is_valid(raise_exception=True) 
-        req = serializer_data.validated_data
+        serializer_data.is_valid(raise_exception=True)
+        req = serializer_data.create(validated_data=serializer_data.validated_data)
         req.created_by = request.user.id
         impl_resp = PropertyImpl.create_property(request=req)
         api_resp.set_data(CreatePropertyResponseSerializer(instance=impl_resp))
@@ -30,7 +30,7 @@ class PropertyView(ViewSet):
         api_resp.set_reason_code(impl_resp.reason_code)
         return api_resp.serialize()
 
-    def get_all_properties(request: Request) -> Response:
+    def get_all_properties(self, request: Request) -> Response:
         api_resp = AResponse(message="Properties fetched successfully")
         impl_resp = PropertyImpl.get_all_properties()
         api_resp.set_data(ListPropertyResponseSerializer(instance=impl_resp))

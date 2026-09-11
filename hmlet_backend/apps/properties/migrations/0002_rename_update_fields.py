@@ -1,0 +1,21 @@
+from django.db import migrations
+
+
+class Migration(migrations.Migration):
+
+    dependencies = [
+        ('properties', '0001_initial'),
+    ]
+
+    operations = [
+        migrations.RenameField(
+            model_name='properties',
+            old_name='update_at',
+            new_name='updated_at',
+        ),
+        migrations.RenameField(
+            model_name='properties',
+            old_name='update_by',
+            new_name='updated_by',
+        ),
+    ]
