@@ -20,6 +20,10 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path(
+        "api/auth/",
+        include("hmlet_backend.apps.users.api.v1.urls"),
+        ),
+    path(
           "api/properties/",
           include("hmlet_backend.apps.properties.api.v1.urls"),
       ),
