@@ -8,8 +8,8 @@ class BaseModel(models.Model):
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     created_by = models.IntegerField(null=True, blank=True)
-    update_at = models.DateTimeField(auto_now=True)
-    update_by = models.IntegerField(null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    updated_by = models.IntegerField(null=True, blank=True)
 
     objects = ActiveRecord()
 

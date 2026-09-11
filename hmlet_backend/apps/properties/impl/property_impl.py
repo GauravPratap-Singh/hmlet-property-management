@@ -6,11 +6,6 @@ from hmlet_backend.apps.properties.models.requests.get_property_request import G
 from hmlet_backend.apps.properties.models.responses.create_property_response import CreatePropertyResponse
 from hmlet_backend.apps.properties.models.responses.get_property_response import GetPropertyResponse
 from hmlet_backend.apps.properties.models.responses.list_property_response import ListPropertyResponse
-from hmlet_backend.apps.properties.serializers.requests.create_property_request_serializer import CreatePropertyRequestSerializer
-from hmlet_backend.apps.properties.serializers.requests.get_property_request_serializer import GetPropertyRequestSerializer
-from hmlet_backend.apps.properties.serializers.responses.create_property_responses_serializer import CreatePropertyResponsesSerializer
-from hmlet_backend.apps.properties.serializers.responses.get_property_responses_serializer import GetPropertyResponseSerializer
-from hmlet_backend.apps.properties.serializers.responses.list_property_responses_serializer import ListPropertyResponseSerializer
 from hmlet_backend.apps.properties.models.entities.properties import Properties
 
 class PropertyImpl:
