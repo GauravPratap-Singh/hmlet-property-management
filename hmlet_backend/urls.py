@@ -27,6 +27,10 @@ urlpatterns = [
           "api/properties/",
           include("hmlet_backend.apps.properties.api.v1.urls"),
       ),
+        path(
+      "api/contracts/",
+      include("hmlet_backend.apps.contracts.api.v1.urls"),
+    ),
     path(
         "api/members/",
         include("hmlet_backend.apps.members.api.v1.urls"),

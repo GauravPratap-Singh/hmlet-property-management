@@ -18,7 +18,7 @@ from hmlet_backend.utils.a_response import AResponse
 class MemberView(ViewSet):
     permission_classes = [IsAuthenticated]
 
-    def get_all_members(self) -> Response:
+    def get_all_members(self, request: Request) -> Response:
         api_resp = AResponse(message="Members fetched successfully")
         impl_resp = MemberImpl.get_all_members()
         api_resp.set_data(ListMemberResponseSerializer(instance=impl_resp))
