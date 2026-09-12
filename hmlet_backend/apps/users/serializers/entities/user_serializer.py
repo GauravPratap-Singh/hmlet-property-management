@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from hmlet_backend.apps.users.models.entities.user import User
 
-class UserSerializer(serializers.Serializer):
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = [
